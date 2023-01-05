@@ -5,14 +5,15 @@
  */
 var twoSum = function(nums, target) {
     let visited = {};
-    
-    for (let i = 0; i < nums.length; i++) {
-        let current = nums[i];
-        let diff = target - current;
-        
-        if (diff in visited) {
-            return [i, visited[diff]]
+
+    for (let i in nums) {
+        let currentNum = nums[i];
+        let difference = target - currentNum;
+
+        if (difference in visited) {
+            return [visited[difference], i]
+        } else {
+            visited[currentNum] = i
         }
-        visited[current] = i;
     }
 };
