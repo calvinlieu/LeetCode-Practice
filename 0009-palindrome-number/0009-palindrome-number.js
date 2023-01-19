@@ -4,7 +4,6 @@
  */
 var isPalindrome = function(x) {
     let str = x.toString();
-    
     let left = 0;
     let right = str.length - 1;
     
@@ -12,6 +11,7 @@ var isPalindrome = function(x) {
         if (str[left] !== str[right]) {
             return false;
         }
+        
         left++;
         right--;
     }
