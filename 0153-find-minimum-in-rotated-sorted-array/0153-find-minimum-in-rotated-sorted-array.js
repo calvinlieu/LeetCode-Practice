@@ -3,17 +3,18 @@
  * @return {number}
  */
 var findMin = function(nums) {
-    let leftPointer = 0;
-    let rightPointer = nums.length - 1;
+    let left = 0;
+    let right = nums.length - 1;
     
-    while (leftPointer < rightPointer) {
-        let middle = Math.floor((rightPointer + leftPointer) / 2);
-        if (nums[middle] > nums[rightPointer]) {
-            leftPointer = middle + 1;
+    while (left < right) {
+        let middle = Math.floor((right + left) / 2);
+        
+        if (nums[middle] > nums[right]) {
+            left = middle + 1;
         } else {
-            rightPointer = middle;
+            right = middle
         }
     }
     
-    return nums[leftPointer]
+    return nums[left]
 };
