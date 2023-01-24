@@ -10,9 +10,9 @@ var findMin = function(nums) {
         let middle = Math.floor((right + left) / 2);
         
         if (nums[middle] > nums[right]) {
-            left = middle + 1;
+            left = middle + 1
         } else {
-            right = middle
+            right = middle;
         }
     }
     
