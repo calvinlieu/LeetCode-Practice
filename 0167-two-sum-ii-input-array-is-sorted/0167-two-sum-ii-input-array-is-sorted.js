@@ -8,13 +8,14 @@ var twoSum = function(numbers, target) {
     let right = numbers.length - 1;
     
     while (left < right) {
-        curSum = numbers[left] + numbers[right];
-        if (curSum > target) {
-            right -= 1;
-        } else if (curSum < target) {
-             left++;
-         } else {
-             return [left + 1, right + 1]
-         }
+        let current = numbers[left] + numbers[right];
+        
+        if (current > target) {
+            right--;
+        } else if (current < target) {
+            left++;
+        } else {
+            return [left + 1, right + 1]
+        }
     }
 };
