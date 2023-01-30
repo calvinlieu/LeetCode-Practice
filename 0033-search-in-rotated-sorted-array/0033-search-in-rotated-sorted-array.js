@@ -7,11 +7,16 @@ var search = function(nums, target) {
     let left = 0;
     let right = nums.length - 1;
     
+    
     while (left <= right) {
-       let middle = Math.floor((left + right) / 2);
+        let middle = Math.floor((right + left) / 2);
+        
         if (target === nums[middle]) {
             return middle;
         }
+        
+        //left sorted portion
+        
         if (nums[left] <= nums[middle]) {
             if (target > nums[middle] || target < nums[left]) {
                 left = middle + 1;
@@ -27,5 +32,5 @@ var search = function(nums, target) {
         }
     }
     
-    return -1;
+    return -1
 };
