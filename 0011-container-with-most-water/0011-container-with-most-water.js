@@ -2,24 +2,31 @@
  * @param {number[]} height
  * @return {number}
  */
-var maxArea = function (height) {
-    let maxArea = 0;
+var maxArea = function(height) {
+    // two pointers + maxArea to keep track of max.
+    let max = 0;
     let left = 0;
-    let right = height.length - 1;
-
+    let right = height.length - 1; 
+    
+    
+    //basic two pointers while look
     while (left < right) {
-        const currentArea = Math.min(height[left], height[right]) * (right - left);
-        if (currentArea > maxArea) {
-            maxArea = currentArea
+        
+        // find the area by grabbing the minimum of both pointers times the width.
+        let area = Math.min(height[left], height[right]) * (right - left) 
+        
+        //if area is bigger then max, replace max with that area.
+        if (area > max) {
+            max = area;
         }
-        // maxArea = Math.max(maxArea, currentArea);
-
+        
+        //move our pointers if one is smaller than the other.
         if (height[left] < height[right]) {
             left++;
         } else {
             right--;
         }
     }
-
-    return maxArea;
+    
+    return max;
 };
