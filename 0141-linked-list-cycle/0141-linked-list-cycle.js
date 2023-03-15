@@ -9,17 +9,17 @@
 /**
  * @param {ListNode} head
  * @return {boolean}
- */
+ */    
+
 var hasCycle = function(head) {
-    let slow = head;
-    let fast = head;
+    let turtle = head;
+    let rabbit = head;
     
-    while (fast !== null && fast.next !== null) {
-        slow = slow.next;
-        fast = fast.next.next;
-        
-        if (slow === fast) {
-            return true;
+    while (rabbit !== null && rabbit.next !== null) {
+        turtle = turtle.next;
+        rabbit = rabbit.next.next;
+        if (turtle === rabbit) {
+            return true
         }
     }
     
