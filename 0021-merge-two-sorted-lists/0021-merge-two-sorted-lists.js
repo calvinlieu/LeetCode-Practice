@@ -10,7 +10,6 @@
  * @param {ListNode} list2
  * @return {ListNode}
  */
-
 var mergeTwoLists = function(list1, list2) {
     let dummy = new ListNode(null);
     let head = dummy;
