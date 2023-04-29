@@ -11,10 +11,15 @@
  * @return {ListNode}
  */
 var addTwoNumbers = function(l1, l2) {
+    //make a new node
     let List = new ListNode(0)
+    //have the head start at the new node
     let head = List;
+    //have a sum
     let sum = 0;
+    //create a carry if the sum goes over 10
     let carry = 0;
+    
     
     while (l1 !== null || l2 !== null || sum > 0) {
         
