@@ -4,29 +4,27 @@
  * @return {boolean}
  */
 var isAnagram = function(s, t) {
-    let first = {};
+    let visited = {};
     
     for (let char of s) {
-        if (!first[char]) {
-            first[char] = 0;
+        if (!(visited[char])) {
+            visited[char] = 0;
         }
-        first[char] += 1;
+        visited[char] += 1;
     }
     
-    for (let char of t) {
-        if (first[char] === undefined) {
+    for (let char1 of t) {
+        if (visited[char1] === undefined) {
             return false;
         }
-        first[char] -= 1;
+        visited[char1] -= 1;
     }
     
-    for (let char in first) {
-        if (first[char] !== 0) {
-            return false
+    for (let char2 in visited) {
+        if (visited[char2] !== 0) {
+            return false;
         }
     }
     
     return true;
-    
-    
 };
