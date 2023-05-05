@@ -4,6 +4,7 @@
  * @return {boolean}
  */
 var isAnagram = function(s, t) {
+    
     let visited = {};
     
     for (let char of s) {
@@ -13,18 +14,19 @@ var isAnagram = function(s, t) {
         visited[char] += 1;
     }
     
-    for (let char1 of t) {
-        if (visited[char1] === undefined) {
+    for (let char of t) {
+        if (visited[char] === undefined) {
             return false;
         }
-        visited[char1] -= 1;
+        visited[char] -= 1;
     }
     
-    for (let char2 in visited) {
-        if (visited[char2] !== 0) {
-            return false;
+    for (let char in visited) {
+        if (visited[char] !== 0) {
+            return false
         }
     }
     
     return true;
+    
 };
